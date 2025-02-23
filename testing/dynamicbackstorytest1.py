@@ -309,7 +309,7 @@ def agent_turn(agent_name, conversation):
     # Combine system prompt + existing conversation
     messages = [{"role": "system", "content": system_content}] + conversation
 
-    response = openai.chat.completions.create(
+    response = openai.ChatCompletion.create(
         model="gpt-4",        # or "gpt-3.5-turbo" if you lack GPT-4 access
         messages=messages,
         temperature=0.9,
